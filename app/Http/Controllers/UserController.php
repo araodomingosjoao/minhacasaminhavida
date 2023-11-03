@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendEmailJob;
+use App\Jobs\SendSmsJob;
 use App\Models\User;
+use App\Services\VerificationCodeService;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 
@@ -26,7 +29,6 @@ class UserController extends Controller
             'whatsapp' => ['required', 'string', 'max:20'], 
             
         ]);
-
         User::create($validated);
 
         return to_route('users.index');
