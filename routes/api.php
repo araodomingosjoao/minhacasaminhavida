@@ -17,3 +17,6 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::post('/check', [\App\Http\Controllers\Api\VerificationCodeController::class, 'checkCode']);
+Route::post('/resend/code', [\App\Http\Controllers\Api\VerificationCodeController::class, 'resendCode']);

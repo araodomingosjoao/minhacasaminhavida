@@ -13,6 +13,12 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    
+    'twilio' => [
+        'account_sid' => env('TWILIO_ACCOUNT_SID'),
+        'auth_token' => env('TWILIO_AUTH_TOKEN'),
+        'twilio_number' => env('TWILIO_NUMBER'),
+    ],
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),
